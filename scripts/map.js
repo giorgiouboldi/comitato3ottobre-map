@@ -126,7 +126,7 @@ $(window).on('load', function() {
 
       if (point.Latitude !== '' && point.Longitude !== '') {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
-          .bindPopup("<b>" + point['Name'] + '</b><br>' +
+          .bindPopup("<b>" + point['Name'] + '</b><br><hr>' +
           (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') +
           point['Description']);
 
@@ -254,7 +254,7 @@ $(window).on('load', function() {
         scrollCollapse: true,
         scrollY: 'calc(' + tableHeight + 'vh - 40px)',
         info: false,
-        searching: false,
+        searching: true,
         columns: generateColumnsArray(),
       });
     }

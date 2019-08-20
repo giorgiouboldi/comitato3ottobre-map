@@ -287,3 +287,11 @@ span.legend-icon {
 .ladder form, .ladder div {
   display: block;
 }
+
+.marker-cluster-small{
+  background-color: rgba(216, 216, 216, 0.6)!important;
+}
+
+.marker-cluster-small div {
+    background-color: rgba(216, 216, 216, 0.6)!important;
+}
