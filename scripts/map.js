@@ -126,8 +126,9 @@ $(window).on('load', function() {
 
       if (point.Latitude !== '' && point.Longitude !== '') {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
-          .bindPopup("<b>" + point['Name'] + '</b><br><hr>' +
-          (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') +
+          .bindPopup("<b>" + point['TitleEvent'] + '</b><br><hr>' +
+          (point['ImageURL'] ? ('<img src="' + point['ImageURL'] + '"><br>') : '') +
+          (point['VideoURL'] ? ('<iframe width="560" height="315" src="' + point['VideoURL'] + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>') : '') + 
           point['Description']);
 
         if (layers !== undefined && layers.length !== 1) {
