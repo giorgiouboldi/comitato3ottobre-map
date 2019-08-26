@@ -124,12 +124,17 @@ $(window).on('load', function() {
           point['Icon Color']
         );
 
+
+
       if (point.Latitude !== '' && point.Longitude !== '') {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
           .bindPopup("<b>" + point['TitleEvent'] + '</b><br><hr>' +
           (point['ImageURL'] ? ('<img src="' + point['ImageURL'] + '"><br>') : '') +
-          (point['VideoURL'] ? ('<iframe width="560" height="315" src="' + point['VideoURL'] + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>') : '') + 
-          point['Description']);
+          (point['VideoURL'] ? ('<iframe width="560" height="315" src="' + point['VideoURL'] + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>') : '') +
+          point['Description'],
+        {
+          maxWidth: "auto"
+        });
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Group]);
