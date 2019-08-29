@@ -128,10 +128,10 @@ $(window).on('load', function() {
 
       if (point.Latitude !== '' && point.Longitude !== '') {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
-          .bindPopup('<p style="color:'+ point['Marker Color'] + '">' + point['Group'] + ' · ' + point['Edition'] +'</p>' +
+          .bindPopup('<p style="color:'+ point['Marker Color'] + '">' + point['Edition'] +'</p>' +
           (point['ImageURL'] ? ('<img src="' + point['ImageURL'] + '"><br>') : '') +
           (point['VideoURL'] ? ('<iframe width="450" height="250" src="' + point['VideoURL'] + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>') : '') +
-          ('<h3>' + point['TitleEvent'] + ' (' + point['Date'] + ')</h3>' + '<p>'+point['Description']+'</p>' + '<br>' + '<h6>' + point['Location'] + ' (' + point['City'] +')'+'</h6>'),
+          ('<h3>' + point['Location'] + '</h3>' + '<br>' + '<h6>' + point['City'] +'</h6>'),
         {
           maxWidth: "auto"
         });
