@@ -897,30 +897,30 @@ $(window).on('load', function() {
     }
   }
 
-  /**
-   * Changes map attribution (author, GitHub repo, email etc.) in bottom-right
-   */
-  function changeAttribution() {
-    var attributionHTML = $('.leaflet-control-attribution')[0].innerHTML;
-    var credit = 'View <a href="' + googleDocURL + '" target="_blank">data</a>';
-    var name = getSetting('_authorName');
-    var url = getSetting('_authorURL');
 
-    if (name && url) {
-      if (url.indexOf('@') > 0) { url = 'mailto:' + url; }
-      credit += ' by <a href="' + url + '">' + name + '</a> | ';
-    } else if (name) {
-      credit += ' by ' + name + ' | ';
-    } else {
-      credit += ' | ';
+    /**
+     * Changes map attribution (author, GitHub repo, email etc.) in bottom-right
+     */
+    function changeAttribution() {
+      var attributionHTML = $('.leaflet-control-attribution')[0].innerHTML;
+      var credit = '';
+      var name = getSetting('_authorName');
+      var url = getSetting('_authorURL');
+
+      if (name && url) {
+        if (url.indexOf('@') > 0) { url = 'mailto:' + url; }
+        credit += ' ';
+      } else if (name) {
+        credit += ' ';
+      } else {
+        credit += ' ';
+      }
+
+      credit += '';
+      if (getSetting('_codeCredit')) credit += ' by ' + getSetting('_codeCredit');
+      credit += ' with ';
+      $('.leaflet-control-attribution')[0].innerHTML = credit + attributionHTML;
     }
-
-    credit += 'View <a href="' + getSetting('_githubRepo') + '">code</a>';
-    if (getSetting('_codeCredit')) credit += ' by ' + getSetting('_codeCredit');
-    credit += ' with ';
-    $('.leaflet-control-attribution')[0].innerHTML = credit + attributionHTML;
-  }
-
 
   /**
    * Loads the basemap and adds it to the map

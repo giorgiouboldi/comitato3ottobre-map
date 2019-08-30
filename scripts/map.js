@@ -624,7 +624,6 @@ $(window).on('load', function() {
     // Add point markers to the map
     var points = mapData.sheets(constants.pointsSheetName);
     console.log(points)
-    points.elements=points.elements.filter(function(d){return d.Page === "L'Europa inizia a Lampedusa"})
     var layers;
     var group = '';
     if (points && points.elements.length > 0) {
@@ -902,20 +901,20 @@ $(window).on('load', function() {
    */
   function changeAttribution() {
     var attributionHTML = $('.leaflet-control-attribution')[0].innerHTML;
-    var credit = 'View <a href="' + googleDocURL + '" target="_blank">data</a>';
+    var credit = '';
     var name = getSetting('_authorName');
     var url = getSetting('_authorURL');
 
     if (name && url) {
       if (url.indexOf('@') > 0) { url = 'mailto:' + url; }
-      credit += ' by <a href="' + url + '">' + name + '</a> | ';
+      credit += ' ';
     } else if (name) {
-      credit += ' by ' + name + ' | ';
+      credit += ' ';
     } else {
-      credit += ' | ';
+      credit += ' ';
     }
 
-    credit += 'View <a href="' + getSetting('_githubRepo') + '">code</a>';
+    credit += '';
     if (getSetting('_codeCredit')) credit += ' by ' + getSetting('_codeCredit');
     credit += ' with ';
     $('.leaflet-control-attribution')[0].innerHTML = credit + attributionHTML;

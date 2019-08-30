@@ -12,7 +12,7 @@ body {
 
 #map {
   width: 100vw;
-  height: 100vh;
+  height: 600px;
   visibility: hidden;
 }
 
@@ -78,9 +78,7 @@ form {
   margin-right: 8px;
 }
 
-.leaflet-popup-content {
-  min-width: 450px;
-}
+
 
 .leaflet-popup-content img {
   width: 100%;
