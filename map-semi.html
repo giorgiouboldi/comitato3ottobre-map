@@ -65,10 +65,22 @@
 
   <!-- CustomCSS to hide filters-->
   <style type="text/css">
+      #map {
+          width: 100vw;
+          height: 700px;
+          visibility: hidden;
+        }
+
+        html, body {
+        height: 700px;
+        width: 100%;
+      }
+
       .leaflet-left {
         display: none;
       }
-        .leaflet-popup-content {
+
+      .leaflet-popup-content {
           min-width: 450px;
         }
   </style>

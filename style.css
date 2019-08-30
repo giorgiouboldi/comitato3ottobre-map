@@ -1,20 +1,7 @@
-html,
-body {
-  padding: 0;
-  margin: 0 auto;
-  height: 600px;
-  width: 100%;
-}
-
 .leaflet-container {
   font-family: 'DM Sans', sans-serif;
 }
 
-#map {
-  width: 100vw;
-  height: 600px;
-  visibility: hidden;
-}
 
 h3 {
   font-size: 1.7em;
