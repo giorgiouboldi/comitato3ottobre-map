@@ -131,7 +131,7 @@ $(window).on('load', function() {
           .bindPopup('<p style="color:'+ point['Marker Color'] + '">' + point['Date'] +'</p>' +
           (point['ImageURL'] ? ('<img src="' + point['ImageURL'] + '"><br>') : '') +
           (point['VideoURL'] ? ('<iframe width="450" height="250" src="' + point['VideoURL'] + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>') : '') +
-          ('<h3>' + point['TitleEvent'] + '</h3>' + '<p>'+point['Description']+'</p>' + '<br>' + '<h6>' + point['Location'] + ' (' + point['City'] +')'+'</h6>'),
+          ('<h3>' + point['Location'] + ' (' + point['City'] +')' + '</h3>' + '<p><b>'+ point['TitleEvent'] + '</b> - ' + point['Description']+'</p>' + '<br>'),
         {
           maxWidth: "auto"
         });
